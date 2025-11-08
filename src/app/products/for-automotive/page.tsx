@@ -98,12 +98,6 @@ export default function ForAutomotivePage() {
     description: "Scale's automotive AI solutions help you accelerate development while maintaining the highest standards of safety and reliability.",
     benefits: [
       {
-        id: 1,
-        icon: "🚗",
-        title: "Accelerated Development",
-        description: "Reduce time-to-market with our efficient data pipeline and annotation workflows."
-      },
-      {
         id: 2,
         icon: "🔍",
         title: "Superior Accuracy",

@@ -341,66 +341,7 @@ export default function ModelEvaluation() {
         </div>
       </section>
 
-      {/* Use Cases Section */}
-      <section className={styles.useCases}>
-        <div className={styles.container}>
-          <motion.div 
-            className={styles.useCasesContent}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={staggerContainer}
-          >
-            <motion.h2 className={styles.sectionTitle} variants={fadeIn}>
-              Industry Applications
-            </motion.h2>
-            <motion.p className={styles.sectionDescription} variants={fadeIn}>
-              Our evaluation solutions are trusted across industries for diverse AI applications.
-            </motion.p>
-            
-            <motion.div 
-              className={styles.useCaseGrid}
-              variants={staggerContainer}
-            >
-              <motion.div className={styles.useCaseCard} variants={fadeIn}>
-                <img 
-                  src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" 
-                  alt="Natural Language Processing" 
-                  className={styles.useCaseImage}
-                />
-                <div className={styles.useCaseInfo}>
-                  <h3>Large Language Models</h3>
-                  <p>Comprehensive evaluation of LLMs for accuracy, safety, bias, and alignment with human values and preferences.</p>
-                </div>
-              </motion.div>
-              
-              <motion.div className={styles.useCaseCard} variants={fadeIn}>
-                <img 
-                  src="https://images.unsplash.com/photo-1557200134-90327ee9fafa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" 
-                  alt="Healthcare AI" 
-                  className={styles.useCaseImage}
-                />
-                <div className={styles.useCaseInfo}>
-                  <h3>Healthcare AI</h3>
-                  <p>Rigorous evaluation frameworks for medical imaging, diagnostics, and clinical decision support systems with patient safety focus.</p>
-                </div>
-              </motion.div>
-              
-              <motion.div className={styles.useCaseCard} variants={fadeIn}>
-                <img 
-                  src="https://images.unsplash.com/photo-1579869847514-7c1a19d2d2ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1634&q=80" 
-                  alt="Financial services" 
-                  className={styles.useCaseImage}
-                />
-                <div className={styles.useCaseInfo}>
-                  <h3>Financial Services</h3>
-                  <p>Evaluation of risk models, fraud detection systems, and trading algorithms with focus on reliability and regulatory compliance.</p>
-                </div>
-              </motion.div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+   
 
 
       {/* CTA Section */}

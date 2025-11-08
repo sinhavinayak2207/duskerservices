@@ -350,14 +350,7 @@ export default function ScaleGenAIPlatformPage() {
         path: "/products/scale-data-engine",
         gradient: "linear-gradient(135deg, #6a5af9 0%, #f857a6 100%)"
       },
-      {
-        id: 2,
-        title: "Scale Evaluation",
-        description: "Comprehensively evaluate and benchmark your AI models with our testing framework.",
-        image: "/images/products/evaluation-card.jpg",
-        path: "/products/scale-evaluation",
-        gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
-      },
+     
       {
         id: 3,
         title: "For Enterprise",

@@ -36,20 +36,7 @@ const products = [
     link: '/products/for-automotive',
     color: '#0d9488',
   },
-  {
-    title: 'Scale Donovan',
-    description: "Orchestrate and automate your AI workflows with Donovan, Dusker's smart assistant for data and model operations.",
-    icon: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2965&auto=format&fit=crop',
-    link: '/products/scale-donovan',
-    color: '#8b5cf6',
-  },
-  {
-    title: 'GenAI Platform',
-    description: 'A unified platform for training, evaluating, and deploying generative models. Accelerate innovation with robust tools and analytics.',
-    icon: 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1974&auto=format&fit=crop',
-    link: '/products/scale-genai-platform',
-    color: '#6366f1',
-  },
+ 
   {
     title: 'Scale Evaluation',
     description: 'Comprehensive evaluation framework for AI models. Measure performance, identify weaknesses, and ensure your models meet quality standards.',
@@ -57,13 +44,7 @@ const products = [
     link: '/products/scale-evaluation',
     color: '#ec4899',
   },
-  {
-    title: 'For Model Developers',
-    description: 'Specialized tools and frameworks designed for AI researchers and model developers. Accelerate your development cycle and improve outcomes.',
-    icon: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=2070&auto=format&fit=crop',
-    link: '/products/for-model-developers',
-    color: '#3b82f6',
-  },
+  
 ];
 
 export default function AnimatedProductCards() {

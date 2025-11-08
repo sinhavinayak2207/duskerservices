@@ -40,12 +40,12 @@ export default function Footer() {
         <div className={styles.linksCol}>
           <div className={styles.linksTitle}>Products</div>
           <Link href="/products/for-enterprise" className={styles.link}>Enterprise</Link>
-          <Link href="/products/scale-donovan" className={styles.link}>Donovan</Link>
-          <Link href="/products/for-model-developers" className={styles.link}>Model Developers</Link>
-          <Link href="/products/scale-evaluation" className={styles.link}>Evaluation</Link>
+          
+         
+         
           <Link href="/products/for-government" className={styles.link}>Government</Link>
-          <Link href="/products/for-public-sector" className={styles.link}>Public Sector</Link>
-          <Link href="/products/scale-genai-platform" className={styles.link}>GenAI Platform</Link>
+          
+          
           <Link href="/products/for-generative-ai" className={styles.link}>Generative AI</Link>
           <Link href="/products/for-automotive" className={styles.link}>Automotive</Link>
           <Link href="/products/scale-data-engine" className={styles.link}>Data Engine</Link>

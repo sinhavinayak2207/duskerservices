@@ -317,37 +317,7 @@ export default function ForGenerativeAIPage() {
     ]
   };
 
-  // Related Products section content
-  const relatedProductsContent = {
-    title: "Related Products",
-    subtitle: "EXPLORE MORE",
-    products: [
-      {
-        id: 1,
-        title: "Scale GenAI Platform",
-        description: "Build, deploy, and manage generative AI applications with our end-to-end platform.",
-        image: "/images/products/genai-platform-card.jpg",
-        path: "/products/scale-genai-platform",
-        gradient: "linear-gradient(135deg, #6a5af9 0%, #f857a6 100%)"
-      },
-      {
-        id: 2,
-        title: "Scale Data Engine",
-        description: "Build and maintain high-quality datasets for training and fine-tuning your AI models.",
-        image: "/images/products/data-engine-card.jpg",
-        path: "/products/scale-data-engine",
-        gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
-      },
-      {
-        id: 3,
-        title: "Scale Evaluation",
-        description: "Comprehensively evaluate and benchmark your AI models with our testing framework.",
-        image: "/images/products/evaluation-card.jpg",
-        path: "/products/scale-evaluation",
-        gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
-      }
-    ]
-  };
+
 
   // CTA section content
   const ctaContent = {
@@ -483,7 +453,7 @@ export default function ForGenerativeAIPage() {
       {/* Testimonials section removed */}
       <ProductComparison {...comparisonContent} />
       <ProductFAQ {...faqContent} />
-      <ProductRelated {...relatedProductsContent} />
+ 
       <ProductCTA {...ctaContent} />
     </main>
   );

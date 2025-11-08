@@ -30,36 +30,10 @@ const products = [
     icon: 'https://images.unsplash.com/photo-1553260168-69b041873e65?q=80&w=1974&auto=format&fit=crop',
     description: 'AI training for autonomous vehicles'
   },
-  { 
-    name: 'Scale Donovan', 
-    path: '/products/scale-donovan',
-    icon: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop',
-    description: 'Advanced AI training platform'
-  },
-  { 
-    name: 'Scale GenAI Platform', 
-    path: '/products/scale-genai-platform',
-    icon: 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1974&auto=format&fit=crop',
-    description: 'End-to-end generative AI platform'
-  },
-  { 
-    name: 'Scale Evaluation', 
-    path: '/products/scale-evaluation',
-    icon: 'https://images.unsplash.com/photo-1633613286848-e6f43bbafb8d?q=80&w=2070&auto=format&fit=crop',
-    description: 'Comprehensive model evaluation tools'
-  },
-  { 
-    name: 'For Model Developers', 
-    path: '/products/for-model-developers',
-    icon: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=2070&auto=format&fit=crop',
-    description: 'Tools for AI model developers'
-  },
-  { 
-    name: 'For Public Sector', 
-    path: '/products/for-public-sector',
-    icon: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop',
-    description: 'AI solutions for public institutions'
-  },
+ 
+  
+  
+ 
   { 
     name: 'For Enterprise', 
     path: '/products/for-enterprise',

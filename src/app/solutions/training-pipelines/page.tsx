@@ -193,72 +193,7 @@ export default function TrainingPipelinesPage() {
       </section>
 
       {/* How It Works Section */}
-      <section className={styles.howItWorks}>
-        <div className={styles.container}>
-          <motion.div 
-            className={styles.howItWorksContent}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-          >
-            <motion.h2 variants={fadeIn} className={styles.sectionTitle}>
-              How It Works
-            </motion.h2>
-            
-            <div className={styles.timeline}>
-              <motion.div variants={fadeIn} className={styles.timelineItem}>
-                <div className={styles.timelineNumber}>1</div>
-                <div className={styles.timelineContent}>
-                  <h3>Data Preparation</h3>
-                  <p>Import, clean, and transform your data with our automated data processing tools.</p>
-                </div>
-              </motion.div>
-              
-              <motion.div variants={fadeIn} className={styles.timelineItem}>
-                <div className={styles.timelineNumber}>2</div>
-                <div className={styles.timelineContent}>
-                  <h3>Model Development</h3>
-                  <p>Build and iterate on your models using our optimized training environment.</p>
-                </div>
-              </motion.div>
-              
-              <motion.div variants={fadeIn} className={styles.timelineItem}>
-                <div className={styles.timelineNumber}>3</div>
-                <div className={styles.timelineContent}>
-                  <h3>Experimentation</h3>
-                  <p>Run experiments with different configurations and track results in real-time.</p>
-                </div>
-              </motion.div>
-              
-              <motion.div variants={fadeIn} className={styles.timelineItem}>
-                <div className={styles.timelineNumber}>4</div>
-                <div className={styles.timelineContent}>
-                  <h3>Optimization</h3>
-                  <p>Fine-tune your models with automated hyperparameter optimization.</p>
-                </div>
-              </motion.div>
-              
-              <motion.div variants={fadeIn} className={styles.timelineItem}>
-                <div className={styles.timelineNumber}>5</div>
-                <div className={styles.timelineContent}>
-                  <h3>Deployment</h3>
-                  <p>Deploy your models to production with one-click deployment options.</p>
-                </div>
-              </motion.div>
-              
-              <motion.div variants={fadeIn} className={styles.timelineItem}>
-                <div className={styles.timelineNumber}>6</div>
-                <div className={styles.timelineContent}>
-                  <h3>Monitoring</h3>
-                  <p>Monitor performance and retrain models as needed to maintain accuracy.</p>
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
+     
       {/* Use Cases Section */}
       <section className={styles.useCases}>
         <div className={styles.container}>
@@ -304,10 +239,7 @@ export default function TrainingPipelinesPage() {
                   alt="Recommender Systems" 
                   className={styles.useCaseImage}
                 />
-                <div className={styles.useCaseInfo}>
-                  <h3>Recommender Systems</h3>
-                  <p>Develop personalized recommendation engines for e-commerce, content, and more.</p>
-                </div>
+                
               </motion.div>
               
               <motion.div variants={fadeIn} className={styles.useCaseCard}>

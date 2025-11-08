@@ -338,10 +338,8 @@ export default function DataAnnotation() {
               Partner with Dusker for your data annotation needs and experience the perfect balance of speed, quality, and cost-effectiveness.
             </motion.p>
             <motion.div className={styles.ctaButtons} variants={fadeIn}>
-              <Link href="/contact" className={styles.primaryButton}>
-                Talk to an Expert
-              </Link>
-              <Link href="/pricing" className={styles.secondaryButton}>
+             
+              <Link href="/contact" className={styles.secondaryButton}>
                 View Pricing
               </Link>
             </motion.div>

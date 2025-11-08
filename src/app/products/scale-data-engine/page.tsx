@@ -116,12 +116,7 @@ export default function ScaleDataEnginePage() {
         title: "Comprehensive Analytics",
         description: "Gain insights into your data quality and model performance with detailed analytics."
       },
-      {
-        id: 4,
-        icon: "🔄",
-        title: "Seamless Integration",
-        description: "Integrate with your existing tools and workflows with our flexible API."
-      },
+     
       {
         id: 5,
         icon: "🛡️",

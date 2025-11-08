@@ -272,22 +272,7 @@ export default function ForEnterprisePage() {
         path: "/products/scale-data-engine",
         gradient: "linear-gradient(135deg, #6a5af9 0%, #f857a6 100%)"
       },
-      {
-        id: 2,
-        title: "Scale GenAI Platform",
-        description: "Build and deploy generative AI applications across your enterprise.",
-        image: "/images/products/genai-platform-card.jpg",
-        path: "/products/scale-genai-platform",
-        gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
-      },
-      {
-        id: 3,
-        title: "Scale Evaluation",
-        description: "Comprehensively evaluate and ensure quality of your enterprise AI systems.",
-        image: "/images/products/evaluation-card.jpg",
-        path: "/products/scale-evaluation",
-        gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
-      }
+      
     ]
   };
 
