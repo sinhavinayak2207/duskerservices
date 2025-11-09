@@ -19,7 +19,7 @@ export default function ForAutomotivePage() {
     primaryButtonText: "Get Started",
     secondaryButtonText: "Schedule Demo",
     primaryButtonLink: "/contact",
-    secondaryButtonLink: "/demo"
+    secondaryButtonLink: "/contact"
     // image property removed to use carousel instead
   };
   
@@ -28,22 +28,22 @@ export default function ForAutomotivePage() {
     {
       src: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=2070&auto=format&fit=crop",
       alt: "Autonomous vehicle sensor system",
-      link: "/products/for-automotive/features"
+      
     },
     {
       src: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=2064&auto=format&fit=crop",
       alt: "Automotive AI technology",
-      link: "/products/for-automotive/use-cases"
+      
     },
     {
       src: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070&auto=format&fit=crop",
       alt: "Connected vehicle dashboard",
-      link: "/products/for-automotive/technology"
+      
     },
     {
       src: "https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=2070&auto=format&fit=crop",
       alt: "Autonomous driving simulation",
-      link: "/products/for-automotive/case-studies"
+      
     }
   ];
 
@@ -93,7 +93,7 @@ export default function ForAutomotivePage() {
 
   // Benefits section content
   const benefitsContent = {
-    title: "Why Choose Scale for Automotive",
+    title: "Why Choose Dusker for Automotive",
     subtitle: "BENEFITS",
     description: "Scale's automotive AI solutions help you accelerate development while maintaining the highest standards of safety and reliability.",
     benefits: [
@@ -137,67 +137,7 @@ export default function ForAutomotivePage() {
 
   
 
-  // Comparison section content
-  const comparisonContent = {
-    title: "Choose Your Solution",
-    subtitle: "OFFERINGS",
-    features: [
-      {
-        name: "Data Processing Volume",
-        basic: "Up to 10TB/month",
-        pro: "Up to 100TB/month",
-        enterprise: "Unlimited"
-      },
-      {
-        name: "Sensor Types",
-        basic: "Camera only",
-        pro: "Camera + LiDAR",
-        enterprise: "All sensors"
-      },
-      {
-        name: "Annotation Types",
-        basic: "2D bounding boxes",
-        pro: "2D + 3D annotations",
-        enterprise: "Full suite"
-      },
-      {
-        name: "HD Map Creation",
-        basic: false,
-        pro: "Basic",
-        enterprise: "Advanced"
-      },
-      {
-        name: "Edge Case Discovery",
-        basic: "Limited",
-        pro: "Standard",
-        enterprise: "Comprehensive"
-      },
-      {
-        name: "Simulation Integration",
-        basic: false,
-        pro: "Basic",
-        enterprise: "Advanced"
-      },
-      {
-        name: "Model Evaluation",
-        basic: "Basic metrics",
-        pro: "Standard suite",
-        enterprise: "Custom metrics"
-      },
-      {
-        name: "Support",
-        basic: "Email",
-        pro: "Email + Chat",
-        enterprise: "24/7 Dedicated"
-      },
-      {
-        name: "Custom Workflows",
-        basic: false,
-        pro: "Limited",
-        enterprise: "Full customization"
-      }
-    ]
-  };
+  
 
   // FAQ section content
   const faqContent = {
@@ -289,14 +229,7 @@ export default function ForAutomotivePage() {
         path: "/products/scale-data-engine",
         gradient: "linear-gradient(135deg, #6a5af9 0%, #f857a6 100%)"
       },
-      {
-        id: 2,
-        title: "Scale Evaluation",
-        description: "Comprehensively evaluate and benchmark your AI models with our testing framework.",
-        image: "/images/products/evaluation-card.jpg",
-        path: "/products/scale-evaluation",
-        gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
-      },
+   
       {
         id: 3,
         title: "For Enterprise",
@@ -313,9 +246,9 @@ export default function ForAutomotivePage() {
     title: "Ready to Accelerate Your Automotive AI?",
     description: "Get started with Scale's automotive solutions today and bring safer, more reliable autonomous systems to market faster.",
     primaryButtonText: "Request Consultation",
-    secondaryButtonText: "Download Whitepaper",
+    secondaryButtonText: "Contact",
     primaryButtonLink: "/contact",
-    secondaryButtonLink: "/resources/automotive-ai-whitepaper",
+    secondaryButtonLink: "/contact",
     backgroundImage: "/images/products/automotive-cta-bg.jpg"
   };
 
@@ -366,7 +299,7 @@ export default function ForAutomotivePage() {
       <ProductBenefits {...benefitsContent} />
       <ProductUseCases {...useCasesContent} />
       {/* Testimonials section removed */}
-      <ProductComparison {...comparisonContent} />
+
       <ProductFAQ {...faqContent} />
       <ProductRelated {...relatedProductsContent} />
       <ProductCTA {...ctaContent} />

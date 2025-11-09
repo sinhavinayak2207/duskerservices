@@ -2,7 +2,6 @@
 import React from 'react';
 import ProductFeatures from '@/components/products/ProductFeatures';
 import ProductBenefits from '@/components/products/ProductBenefits';
-
 import ProductComparison from '@/components/products/ProductComparison';
 import ProductFAQ from '@/components/products/ProductFAQ';
 import ProductUseCases from '@/components/products/ProductUseCases';
@@ -19,7 +18,7 @@ export default function ForEnterprisePage() {
     primaryButtonText: "Get Started",
     secondaryButtonText: "Schedule Demo",
     primaryButtonLink: "/contact",
-    secondaryButtonLink: "/demo"
+    secondaryButtonLink: "/contact"
   };
   
   // Carousel images for hero section
@@ -27,26 +26,22 @@ export default function ForEnterprisePage() {
     {
       src: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2069&auto=format&fit=crop",
       alt: "Enterprise AI dashboard visualization",
-      link: "/products/for-enterprise/features"
     },
     {
       src: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=2073&auto=format&fit=crop",
       alt: "Modern corporate office with AI technology",
-      link: "/products/for-enterprise/use-cases"
     },
     {
       src: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop",
       alt: "Enterprise team collaborating with AI tools",
-      link: "/products/for-enterprise/case-studies"
     },
     {
       src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
       alt: "Data visualization for business intelligence",
-      link: "/products/for-enterprise/technology"
     }
   ];
 
-  // Features section content
+  // Features section content with emoji icons
   const featuresContent = {
     title: "Enterprise-Grade Solutions",
     subtitle: "CAPABILITIES",
@@ -56,30 +51,30 @@ export default function ForEnterprisePage() {
         id: 1,
         title: "Scalable Infrastructure",
         description: "Deploy AI solutions that scale seamlessly with your business needs, from departmental pilots to organization-wide implementations.",
-        icon: "server"
+        icon: "🖥️"
       },
       {
         id: 2,
         title: "Enterprise Security",
         description: "Protect sensitive data with our enterprise-grade security features, including encryption, access controls, and compliance certifications.",
-        icon: "shield"
+        icon: "🛡️"
       },
       {
         id: 3,
         title: "Integration Capabilities",
         description: "Connect seamlessly with your existing enterprise systems, including ERP, CRM, and data warehouses through our robust APIs and connectors.",
-        icon: "link"
+        icon: "🔗"
       },
       {
         id: 4,
         title: "Governance Framework",
         description: "Maintain control and visibility with our comprehensive AI governance framework, ensuring responsible and transparent AI deployment.",
-        icon: "check-square"
+        icon: "✅"
       }
     ]
   };
 
-  // Benefits section content
+  // Benefits section content with emoji icons
   const benefitsContent = {
     title: "Enterprise Benefits",
     subtitle: "BUSINESS IMPACT",
@@ -89,39 +84,25 @@ export default function ForEnterprisePage() {
         id: 1,
         title: "Operational Efficiency",
         description: "Streamline processes and reduce operational costs through intelligent automation and workflow optimization.",
-        icon: "settings"
+        icon: "⚙️"
       },
       {
         id: 2,
         title: "Data-Driven Decisions",
         description: "Make informed strategic decisions based on comprehensive data analysis and predictive insights.",
-        icon: "bar-chart-2"
+        icon: "📊"
       },
       {
         id: 3,
         title: "Innovation Acceleration",
         description: "Accelerate innovation cycles and bring new products and services to market faster with AI-powered development.",
-        icon: "zap"
+        icon: "⚡"
       },
       {
         id: 4,
         title: "Customer Experience",
         description: "Enhance customer satisfaction and loyalty through personalized experiences and proactive service.",
-        icon: "users"
-      }
-    ],
-    stats: [
-      {
-        value: "35%",
-        label: "Increase in Operational Efficiency"
-      },
-      {
-        value: "40%",
-        label: "Faster Time-to-Market"
-      },
-      {
-        value: "25%",
-        label: "Reduction in Operational Costs"
+        icon: "👥"
       }
     ]
   };
@@ -182,10 +163,6 @@ export default function ForEnterprisePage() {
       }
     ]
   };
-
-  // Testimonials section content
-  
-  
 
   // Comparison section content
   const comparisonContent = {
@@ -271,8 +248,7 @@ export default function ForEnterprisePage() {
         image: "/images/products/data-engine-card.jpg",
         path: "/products/scale-data-engine",
         gradient: "linear-gradient(135deg, #6a5af9 0%, #f857a6 100%)"
-      },
-      
+      }
     ]
   };
 
@@ -282,7 +258,7 @@ export default function ForEnterprisePage() {
     description: "Get started with Scale's enterprise solutions and drive measurable business impact today.",
     primaryButtonText: "Request Demo",
     secondaryButtonText: "Contact Sales",
-    primaryButtonLink: "/demo",
+    primaryButtonLink: "/contact",
     secondaryButtonLink: "/contact",
     backgroundImage: "/images/products/enterprise-cta-bg.jpg"
   };
@@ -333,8 +309,6 @@ export default function ForEnterprisePage() {
       <ProductFeatures {...featuresContent} />
       <ProductBenefits {...benefitsContent} />
       <ProductUseCases {...useCasesContent} />
-      {/* Testimonials section removed */}
-      <ProductComparison {...comparisonContent} />
       <ProductFAQ {...faqContent} />
       <ProductRelated {...relatedProductsContent} />
       <ProductCTA {...ctaContent} />

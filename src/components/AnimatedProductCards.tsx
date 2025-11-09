@@ -37,13 +37,7 @@ const products = [
     color: '#0d9488',
   },
  
-  {
-    title: 'Scale Evaluation',
-    description: 'Comprehensive evaluation framework for AI models. Measure performance, identify weaknesses, and ensure your models meet quality standards.',
-    icon: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
-    link: '/products/scale-evaluation',
-    color: '#ec4899',
-  },
+  
   
 ];
 

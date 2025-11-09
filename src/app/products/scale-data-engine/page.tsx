@@ -29,22 +29,22 @@ export default function ScaleDataEnginePage() {
     {
       src: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop",
       alt: "Tech/AI visualization",
-      link: "/products/scale-data-engine/features"
+      
     },
     {
       src: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2068&auto=format&fit=crop",
       alt: "Data visualization dashboard",
-      link: "/products/scale-data-engine/use-cases"
+      
     },
     {
       src: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop",
       alt: "Server/data center",
-      link: "/products/scale-data-engine/technology"
+      
     },
     {
       src: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop",
       alt: "AI/ML visualization",
-      link: "/products/scale-data-engine/case-studies"
+      
     }
   ];
 
@@ -315,36 +315,7 @@ export default function ScaleDataEnginePage() {
   };
 
   // Related Products section content
-  const relatedProductsContent = {
-    title: "Related Products",
-    subtitle: "EXPLORE MORE",
-    products: [
-      {
-        id: 1,
-        title: "Scale GenAI Platform",
-        description: "Build, deploy, and manage generative AI applications with our end-to-end platform.",
-        image: "/images/products/genai-platform-card.jpg",
-        path: "/products/scale-genai-platform",
-        gradient: "linear-gradient(135deg, #6a5af9 0%, #f857a6 100%)"
-      },
-      {
-        id: 2,
-        title: "Scale Evaluation",
-        description: "Comprehensively evaluate and benchmark your AI models with our testing framework.",
-        image: "/images/products/evaluation-card.jpg",
-        path: "/products/scale-evaluation",
-        gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
-      },
-      {
-        id: 3,
-        title: "Scale Donovan",
-        description: "Accelerate AI development with our specialized tools for government and defense applications.",
-        image: "/images/products/donovan-card.jpg",
-        path: "/products/scale-donovan",
-        gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
-      }
-    ]
-  };
+  
 
   // CTA section content
   const ctaContent = {
@@ -486,7 +457,7 @@ export default function ScaleDataEnginePage() {
       <ProductUseCases {...useCasesContent} />
       {/* Testimonials section removed */}
       <ProductFAQ {...faqContent} />
-      <ProductRelated {...relatedProductsContent} />
+     
       <ProductCTA {...ctaContent} />
     </main>
   );

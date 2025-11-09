@@ -30,10 +30,6 @@ const products = [
     icon: 'https://images.unsplash.com/photo-1553260168-69b041873e65?q=80&w=1974&auto=format&fit=crop',
     description: 'AI training for autonomous vehicles'
   },
- 
-  
-  
- 
   { 
     name: 'For Enterprise', 
     path: '/products/for-enterprise',
@@ -101,7 +97,7 @@ export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   // Close dropdown when clicking outside
-  React.useEffect(() => {
+  useEffect(() => {
     function handleClick(e: MouseEvent) {
       const nav = document.querySelector(`.${styles.navbar}`);
       if (nav && !nav.contains(e.target as Node)) {
@@ -116,51 +112,45 @@ export default function Navbar() {
     setOpenDropdown(prevState => prevState === name ? null : name);
   };
   
-  // Prevent closing dropdown when clicking inside it
-  const handleDropdownContentClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  // Close dropdown when a link is clicked
+  const handleLinkClick = () => {
+    setOpenDropdown(null);
   };
   
-  // Effect to close dropdown when clicking outside
-  useEffect(() => {
-    const closeDropdown = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (!target.closest(`.${styles.dropdown}`)) {
-        setOpenDropdown(null);
-      }
-    };
-    
-    document.addEventListener('click', closeDropdown);
-    return () => document.removeEventListener('click', closeDropdown);
-  }, [styles.dropdown]);
+  // Prevent closing dropdown when clicking inside it (but not on links)
+  const handleDropdownContentClick = (e: React.MouseEvent) => {
+    // Only stop propagation if not clicking on a link
+    const target = e.target as HTMLElement;
+    if (!target.closest('a')) {
+      e.stopPropagation();
+    }
+  };
 
   return (
     <nav className={styles.navbar}>
       <div className={styles.logoNav}>
-      <Link href="/" className={styles.logoLink} style={{ marginRight: '10rem' }}>
-  <motion.div 
-    className={styles.logo}
-    initial={{ opacity: 0, y: -20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5 }}
-    style={{ display: 'flex', alignItems: 'center', gap: '8px' }} // <-- add this
-  >
-    <Image 
-      src="https://raw.githubusercontent.com/sinhabinayak2207/duskerservices/main/public/duskerlogonew.jpg"
-      alt="Dusker Logo"
-      width={50}
-      height={40}
-      className={styles.logoImage}
-      priority
-    />
-    <span style={{ fontSize: '24px', whiteSpace: 'nowrap' }}>Dusker AI</span> 
-  </motion.div>
-</Link>
+        <Link href="/" className={styles.logoLink} style={{ marginRight: 'clamp(2rem, 5vw, 10rem)' }}>
+          <motion.div 
+            className={styles.logo}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            style={{ display: 'flex', alignItems: 'center', gap: '8px' }}
+          >
+            <Image 
+              src="https://raw.githubusercontent.com/sinhabinayak2207/duskerservices/main/public/duskerlogonew.jpg"
+              alt="Dusker Logo"
+              width={50}
+              height={40}
+              className={styles.logoImage}
+              priority
+            />
+            <span style={{ fontSize: 'clamp(18px, 3vw, 24px)', whiteSpace: 'nowrap' }}>Dusker AI</span> 
+          </motion.div>
+        </Link>
 
         <div className={styles.desktopMenu}>
-          <div
-            className={styles.dropdown}
-          >
+          <div className={styles.dropdown}>
             <span
               className={styles.productsLabel}
               onClick={() => handleDropdown('products')}
@@ -174,7 +164,12 @@ export default function Navbar() {
               onClick={handleDropdownContentClick}
             >
               {products.map((p) => (
-                <Link key={p.path} href={p.path} className={styles.dropdownItem}>
+                <Link 
+                  key={p.path} 
+                  href={p.path} 
+                  className={styles.dropdownItem}
+                  onClick={handleLinkClick}
+                >
                   <div className={styles.dropdownItemIcon}>
                     <Image 
                       src={p.icon} 
@@ -192,9 +187,8 @@ export default function Navbar() {
               ))}
             </div>
           </div>
-          <div
-            className={styles.dropdown}
-          >
+          
+          <div className={styles.dropdown}>
             <span
               className={styles.productsLabel}
               onClick={() => handleDropdown('solutions')}
@@ -208,7 +202,12 @@ export default function Navbar() {
               onClick={handleDropdownContentClick}
             >
               {solutions.map((s) => (
-                <Link key={s.path} href={s.path} className={styles.dropdownItem}>
+                <Link 
+                  key={s.path} 
+                  href={s.path} 
+                  className={styles.dropdownItem}
+                  onClick={handleLinkClick}
+                >
                   <div className={styles.dropdownItemIcon}>
                     <Image 
                       src={s.icon} 
@@ -226,9 +225,8 @@ export default function Navbar() {
               ))}
             </div>
           </div>
-          <div
-            className={styles.dropdown}
-          >
+          
+          <div className={styles.dropdown}>
             <span
               className={styles.productsLabel}
               onClick={() => handleDropdown('resources')}
@@ -242,7 +240,12 @@ export default function Navbar() {
               onClick={handleDropdownContentClick}
             >
               {resources.map((r) => (
-                <Link key={r.path} href={r.path} className={styles.dropdownItem}>
+                <Link 
+                  key={r.path} 
+                  href={r.path} 
+                  className={styles.dropdownItem}
+                  onClick={handleLinkClick}
+                >
                   <div className={styles.dropdownItemIcon}>
                     <Image 
                       src={r.icon} 
@@ -260,6 +263,7 @@ export default function Navbar() {
               ))}
             </div>
           </div>
+          
           <Link href="/about" className={styles.navLink}>About</Link>
           <Link href="/careers" className={styles.navLink}>Careers</Link>
           <Link href="/blog" className={styles.navLink}>Blog</Link>
@@ -271,6 +275,7 @@ export default function Navbar() {
           </button>
           <Link href="/contact" className={styles.contactBtn}>Contact</Link>
         </div>
+        
         <button
           className={styles.hamburger}
           aria-label="Open menu"
@@ -281,6 +286,7 @@ export default function Navbar() {
           </div>
         </button>
       </div>
+      
       {menuOpen && (
         <motion.div 
           className={styles.mobileMenu}

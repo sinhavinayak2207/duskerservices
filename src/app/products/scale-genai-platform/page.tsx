@@ -27,22 +27,22 @@ export default function ScaleGenAIPlatformPage() {
     {
       src: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop",
       alt: "Generative AI text interface",
-      link: "/products/scale-genai-platform/features"
+      
     },
     {
       src: "https://images.unsplash.com/photo-1686191128864-3e3d8a27236d?q=80&w=2070&auto=format&fit=crop",
       alt: "AI image generation visualization",
-      link: "/products/scale-genai-platform/use-cases"
+      
     },
     {
       src: "https://images.unsplash.com/photo-1675557009875-436f71457475?q=80&w=2070&auto=format&fit=crop",
       alt: "Enterprise AI deployment dashboard",
-      link: "/products/scale-genai-platform/technology"
+      
     },
     {
       src: "https://images.unsplash.com/photo-1682687220063-4742bd7fd538?q=80&w=2070&auto=format&fit=crop",
       alt: "AI model fine-tuning interface",
-      link: "/products/scale-genai-platform/case-studies"
+      
     }
   ];
 
@@ -368,7 +368,7 @@ export default function ScaleGenAIPlatformPage() {
     description: "Get started with Scale GenAI Platform today and accelerate your journey from prototype to production.",
     primaryButtonText: "Start Free Trial",
     secondaryButtonText: "Talk to Sales",
-    primaryButtonLink: "/trial",
+    primaryButtonLink: "/contact",
     secondaryButtonLink: "/contact",
     backgroundImage: "/images/products/genai-platform-cta-bg.jpg"
   };

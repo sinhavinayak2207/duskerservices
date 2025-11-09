@@ -27,22 +27,22 @@ export default function ForGenerativeAIPage() {
     {
       src: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485",
       alt: "AI visualization with neural network",
-      link: "/products/for-generative-ai/features"
+      
     },
     {
       src: "https://images.unsplash.com/photo-1677442136019-21780ecad995",
       alt: "Generative AI art visualization",
-      link: "/products/for-generative-ai/use-cases"
+      
     },
     {
       src: "https://images.unsplash.com/photo-1684391845084-8f3bf9e5d03b",
       alt: "AI text generation interface",
-      link: "/products/for-generative-ai/case-studies"
+      
     },
     {
       src: "https://images.unsplash.com/photo-1675557009875-436f71457475",
       alt: "AI image generation example",
-      link: "/products/for-generative-ai/technology"
+      
     }
   ];
 
@@ -178,67 +178,6 @@ export default function ForGenerativeAIPage() {
     ]
   };
 
-  // Comparison section content
-  const comparisonContent = {
-    title: "Choose Your Plan",
-    subtitle: "PRICING",
-    features: [
-      {
-        name: "Training Data Access",
-        basic: "Limited datasets",
-        pro: "Standard datasets",
-        enterprise: "Custom datasets"
-      },
-      {
-        name: "Fine-tuning Capacity",
-        basic: "5 models/month",
-        pro: "20 models/month",
-        enterprise: "Unlimited"
-      },
-      {
-        name: "Prompt Engineering",
-        basic: "Basic tools",
-        pro: "Advanced platform",
-        enterprise: "Enterprise suite"
-      },
-      {
-        name: "RLHF Pipeline",
-        basic: false,
-        pro: "Standard",
-        enterprise: "Custom"
-      },
-      {
-        name: "Evaluation Framework",
-        basic: "Basic metrics",
-        pro: "Comprehensive",
-        enterprise: "Custom metrics"
-      },
-      {
-        name: "Safety Testing",
-        basic: "Standard tests",
-        pro: "Advanced suite",
-        enterprise: "Custom protocols"
-      },
-      {
-        name: "Team Collaboration",
-        basic: "Up to 5 users",
-        pro: "Up to 20 users",
-        enterprise: "Unlimited"
-      },
-      {
-        name: "Support",
-        basic: "Email",
-        pro: "Email + Chat",
-        enterprise: "24/7 Dedicated"
-      },
-      {
-        name: "Expert Consultation",
-        basic: false,
-        pro: "Limited",
-        enterprise: "Dedicated team"
-      }
-    ]
-  };
 
   // FAQ section content
   const faqContent = {
@@ -325,7 +264,7 @@ export default function ForGenerativeAIPage() {
     description: "Get started with Scale's generative AI solution today and build more capable, safer, and reliable AI applications.",
     primaryButtonText: "Start Free Trial",
     secondaryButtonText: "Talk to Sales",
-    primaryButtonLink: "/trial",
+    primaryButtonLink: "/contact",
     secondaryButtonLink: "/contact",
     backgroundImage: "/images/products/generative-ai-cta-bg.jpg"
   };
@@ -399,9 +338,11 @@ export default function ForGenerativeAIPage() {
                   alignItems: 'center',
                   gap: '0.5rem',
                   cursor: 'pointer',
-                  transition: 'all 0.2s ease'
+                  transition: 'all 0.2s ease',
+                  
                 }}>
-                  Request Demo
+                  <a href='/contact'>Request Demo</a>
+                  
                   <span>→</span>
                 </button>
                 
@@ -418,7 +359,7 @@ export default function ForGenerativeAIPage() {
                   cursor: 'pointer',
                   transition: 'all 0.2s ease'
                 }}>
-                  Learn More
+                   <a href='/contact'>Learn More</a>
                   <span>→</span>
                 </button>
               </div>
@@ -451,7 +392,7 @@ export default function ForGenerativeAIPage() {
       <ProductBenefits {...benefitsContent} />
       <ProductUseCases {...useCasesContent} />
       {/* Testimonials section removed */}
-      <ProductComparison {...comparisonContent} />
+
       <ProductFAQ {...faqContent} />
  
       <ProductCTA {...ctaContent} />

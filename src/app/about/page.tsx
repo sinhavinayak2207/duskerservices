@@ -211,7 +211,7 @@ export default function AboutPage() {
           
           <div className={styles.teamMember}>
             <img 
-              src="/images/raj_shrivastava.jpg" 
+              src="https://res.cloudinary.com/doa53gfwf/image/upload/v1762670235/u9fmyagiitewevebrppa.jpg"
               alt="Raj Shrivastava" 
               className={styles.teamAvatar} 
             />
@@ -264,10 +264,8 @@ export default function AboutPage() {
         </motion.div>
         
         <motion.div variants={fadeIn} className={styles.socialLinks}>
-          <a href="#" className={styles.socialIcon} aria-label="LinkedIn">in</a>
-          <a href="#" className={styles.socialIcon} aria-label="Twitter">𝕏</a>
-         
-          <a href="#" className={styles.socialIcon} aria-label="YouTube">▶</a>
+          <a href="https://www.linkedin.com/company/dusker-services?trk=profile-position" className={styles.socialIcon} aria-label="LinkedIn">in</a>
+       
         </motion.div>
       </motion.section>
     </main>
