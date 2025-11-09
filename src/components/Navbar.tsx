@@ -1,9 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import styles from './Navbar.module.css';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const products = [
   { 
@@ -29,36 +26,6 @@ const products = [
     path: '/products/for-automotive',
     icon: 'https://images.unsplash.com/photo-1553260168-69b041873e65?q=80&w=1974&auto=format&fit=crop',
     description: 'AI training for autonomous vehicles'
-  },
-  { 
-    name: 'Scale Donovan', 
-    path: '/products/scale-donovan',
-    icon: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop',
-    description: 'Advanced AI training platform'
-  },
-  { 
-    name: 'Scale GenAI Platform', 
-    path: '/products/scale-genai-platform',
-    icon: 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1974&auto=format&fit=crop',
-    description: 'End-to-end generative AI platform'
-  },
-  { 
-    name: 'Scale Evaluation', 
-    path: '/products/scale-evaluation',
-    icon: 'https://images.unsplash.com/photo-1633613286848-e6f43bbafb8d?q=80&w=2070&auto=format&fit=crop',
-    description: 'Comprehensive model evaluation tools'
-  },
-  { 
-    name: 'For Model Developers', 
-    path: '/products/for-model-developers',
-    icon: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=2070&auto=format&fit=crop',
-    description: 'Tools for AI model developers'
-  },
-  { 
-    name: 'For Public Sector', 
-    path: '/products/for-public-sector',
-    icon: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop',
-    description: 'AI solutions for public institutions'
   },
   { 
     name: 'For Enterprise', 
@@ -126,10 +93,9 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
-  // Close dropdown when clicking outside
-  React.useEffect(() => {
+  useEffect(() => {
     function handleClick(e: MouseEvent) {
-      const nav = document.querySelector(`.${styles.navbar}`);
+      const nav = document.querySelector('nav');
       if (nav && !nav.contains(e.target as Node)) {
         setOpenDropdown(null);
       }
@@ -142,276 +108,237 @@ export default function Navbar() {
     setOpenDropdown(prevState => prevState === name ? null : name);
   };
   
-  // Prevent closing dropdown when clicking inside it
-  const handleDropdownContentClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  const handleLinkClick = () => {
+    setOpenDropdown(null);
   };
   
-  // Effect to close dropdown when clicking outside
-  useEffect(() => {
-    const closeDropdown = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (!target.closest(`.${styles.dropdown}`)) {
-        setOpenDropdown(null);
-      }
-    };
-    
-    document.addEventListener('click', closeDropdown);
-    return () => document.removeEventListener('click', closeDropdown);
-  }, [styles.dropdown]);
+  const handleDropdownContentClick = (e: React.MouseEvent) => {
+    const target = e.target as HTMLElement;
+    if (!target.closest('a')) {
+      e.stopPropagation();
+    }
+  };
 
-  return (
-    <nav className={styles.navbar}>
-      <div className={styles.logoNav}>
-        <Link href="/" className={styles.logoLink}>
-          <motion.div 
-            className={styles.logo}
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Image 
-              src="https://github.com/sinhabinayak2207/duskerservices/blob/main/public/duskerlogonew.jpg?raw=true"
-              alt="Dusker Logo"
-              width={50}
-              height={40}
-              className={styles.logoImage}
-              priority
-            />
-            <span style={{ fontSize: '24px' }}>Dusker AI</span>
-          </motion.div>
-        </Link>
-        <div className={styles.desktopMenu}>
-          <div
-            className={styles.dropdown}
-          >
-            <span
-              className={styles.productsLabel}
-              onClick={() => handleDropdown('products')}
-              tabIndex={0}
-              aria-haspopup="true"
-              aria-expanded={openDropdown === 'products'}
-              onKeyDown={e => { if (e.key === 'Enter') handleDropdown('products'); }}
-            >Products</span>
-            <div
-              className={`${styles.dropdownContent} ${openDropdown === 'products' ? styles.active : ''}`}
-              onClick={handleDropdownContentClick}
-            >
-              {products.map((p) => (
-                <Link key={p.path} href={p.path} className={styles.dropdownItem}>
-                  <div className={styles.dropdownItemIcon}>
-                    <Image 
-                      src={p.icon} 
-                      alt={p.name} 
-                      width={40} 
-                      height={40} 
-                      className={styles.menuIcon}
-                    />
-                  </div>
-                  <div className={styles.dropdownItemContent}>
-                    <span className={styles.dropdownItemTitle}>{p.name}</span>
-                    <span className={styles.dropdownItemDescription}>{p.description}</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-          <div
-            className={styles.dropdown}
-          >
-            <span
-              className={styles.productsLabel}
-              onClick={() => handleDropdown('solutions')}
-              tabIndex={0}
-              aria-haspopup="true"
-              aria-expanded={openDropdown === 'solutions'}
-              onKeyDown={e => { if (e.key === 'Enter') handleDropdown('solutions'); }}
-            >Solutions</span>
-            <div
-              className={`${styles.dropdownContent} ${openDropdown === 'solutions' ? styles.active : ''}`}
-              onClick={handleDropdownContentClick}
-            >
-              {solutions.map((s) => (
-                <Link key={s.path} href={s.path} className={styles.dropdownItem}>
-                  <div className={styles.dropdownItemIcon}>
-                    <Image 
-                      src={s.icon} 
-                      alt={s.name} 
-                      width={40} 
-                      height={40} 
-                      className={styles.menuIcon}
-                    />
-                  </div>
-                  <div className={styles.dropdownItemContent}>
-                    <span className={styles.dropdownItemTitle}>{s.name}</span>
-                    <span className={styles.dropdownItemDescription}>{s.description}</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-          <div
-            className={styles.dropdown}
-          >
-            <span
-              className={styles.productsLabel}
-              onClick={() => handleDropdown('resources')}
-              tabIndex={0}
-              aria-haspopup="true"
-              aria-expanded={openDropdown === 'resources'}
-              onKeyDown={e => { if (e.key === 'Enter') handleDropdown('resources'); }}
-            >Resources</span>
-            <div
-              className={`${styles.dropdownContent} ${openDropdown === 'resources' ? styles.active : ''}`}
-              onClick={handleDropdownContentClick}
-            >
-              {resources.map((r) => (
-                <Link key={r.path} href={r.path} className={styles.dropdownItem}>
-                  <div className={styles.dropdownItemIcon}>
-                    <Image 
-                      src={r.icon} 
-                      alt={r.name} 
-                      width={40} 
-                      height={40} 
-                      className={styles.menuIcon}
-                    />
-                  </div>
-                  <div className={styles.dropdownItemContent}>
-                    <span className={styles.dropdownItemTitle}>{r.name}</span>
-                    <span className={styles.dropdownItemDescription}>{r.description}</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-          <Link href="/about" className={styles.navLink}>About</Link>
-          <Link href="/careers" className={styles.navLink}>Careers</Link>
-          <Link href="/blog" className={styles.navLink}>Blog</Link>
-          <button className={styles.searchBtn} aria-label="Search">
-            <span className={styles.searchIcon}></span>
-          </button>
-          <button className={styles.themeToggle} aria-label="Toggle theme">
-            <span className={styles.themeIcon}></span>
-          </button>
-          <Link href="/contact" className={styles.contactBtn}>Contact</Link>
-        </div>
-        <button
-          className={styles.hamburger}
-          aria-label="Open menu"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <div className={menuOpen ? styles.hamburgerActive : styles.hamburgerBox}>
-            <span></span><span></span><span></span>
-          </div>
-        </button>
-      </div>
-      {menuOpen && (
-        <motion.div 
-          className={styles.mobileMenu}
-          initial={{ opacity: 0, y: -20 }}
+  const DropdownContent = ({ items, isOpen }: { items: typeof products, isOpen: boolean }) => (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.3 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.2 }}
+          className="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-zinc-900 border border-zinc-800 rounded-xl shadow-2xl overflow-hidden"
+          style={{ width: 'max-content', minWidth: '600px', maxWidth: '800px' }}
+          onClick={handleDropdownContentClick}
         >
-          <div className={styles.mobileMenuHeader}>
-            <Link href="/" className={styles.logoLink} onClick={() => setMenuOpen(false)}>
-              <div className={styles.logo}>
-                <Image 
-                  src="https://github.com/sinhabinayak2207/duskerservices/blob/main/public/duskerlogonew.jpg?raw=true"
-                  alt="Dusker Logo"
-                  width={40}
-                  height={40}
-                  className={styles.logoImage}
-                />
-                <span style={{ fontSize: '24px' }}>Dusker AI</span>
-              </div>
-            </Link>
-            <button
-              className={styles.closeButton}
-              aria-label="Close menu"
-              onClick={() => setMenuOpen(false)}
-            >
-              <span></span>
-              <span></span>
-            </button>
-          </div>
-          
-          <div className={styles.mobileMenuContent}>
-            <div className={styles.mobileSection}>
-              <h3 className={styles.mobileSectionTitle}>Products</h3>
-              <div className={styles.mobileDropdownContent}>
-                {products.map((p) => (
-                  <Link key={p.path} href={p.path} className={styles.mobileDropdownItem} onClick={() => setMenuOpen(false)}>
-                    <div className={styles.mobileItemIcon}>
-                      <Image 
-                        src={p.icon} 
-                        alt={p.name} 
-                        width={32} 
-                        height={32} 
-                        className={styles.mobileMenuIcon}
-                      />
-                    </div>
-                    <div className={styles.mobileItemContent}>
-                      <span className={styles.mobileItemTitle}>{p.name}</span>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-            
-            <div className={styles.mobileSection}>
-              <h3 className={styles.mobileSectionTitle}>Solutions</h3>
-              <div className={styles.mobileDropdownContent}>
-                {solutions.map((s) => (
-                  <Link key={s.path} href={s.path} className={styles.mobileDropdownItem} onClick={() => setMenuOpen(false)}>
-                    <div className={styles.mobileItemIcon}>
-                      <Image 
-                        src={s.icon} 
-                        alt={s.name} 
-                        width={32} 
-                        height={32} 
-                        className={styles.mobileMenuIcon}
-                      />
-                    </div>
-                    <div className={styles.mobileItemContent}>
-                      <span className={styles.mobileItemTitle}>{s.name}</span>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-            
-            <div className={styles.mobileSection}>
-              <h3 className={styles.mobileSectionTitle}>Resources</h3>
-              <div className={styles.mobileDropdownContent}>
-                {resources.map((r) => (
-                  <Link key={r.path} href={r.path} className={styles.mobileDropdownItem} onClick={() => setMenuOpen(false)}>
-                    <div className={styles.mobileItemIcon}>
-                      <Image 
-                        src={r.icon} 
-                        alt={r.name} 
-                        width={32} 
-                        height={32} 
-                        className={styles.mobileMenuIcon}
-                      />
-                    </div>
-                    <div className={styles.mobileItemContent}>
-                      <span className={styles.mobileItemTitle}>{r.name}</span>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-            
-            <div className={styles.mobileNavLinks}>
-              <Link href="/about" className={styles.mobileNavLink} onClick={() => setMenuOpen(false)}>About</Link>
-              <Link href="/careers" className={styles.mobileNavLink} onClick={() => setMenuOpen(false)}>Careers</Link>
-              <Link href="/blog" className={styles.mobileNavLink} onClick={() => setMenuOpen(false)}>Blog</Link>
-              <Link href="/contact" className={styles.mobileNavLink} onClick={() => setMenuOpen(false)}>Contact</Link>
-            </div>
+          <div className="grid grid-cols-2 gap-2 p-4">
+            {items.map((item) => (
+              <a
+                key={item.path}
+                href={item.path}
+                className="flex items-start gap-3 p-3 rounded-lg hover:bg-zinc-800 transition-all duration-200 group"
+                onClick={handleLinkClick}
+              >
+                <div className="flex-shrink-0 w-10 h-10 rounded-lg overflow-hidden bg-zinc-800">
+                  <img 
+                    src={item.icon} 
+                    alt={item.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-200"
+                  />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="font-medium text-white text-sm mb-1 group-hover:text-blue-400 transition-colors">
+                    {item.name}
+                  </div>
+                  <div className="text-xs text-zinc-400 line-clamp-2">
+                    {item.description}
+                  </div>
+                </div>
+              </a>
+            ))}
           </div>
         </motion.div>
       )}
-    </nav>
+    </AnimatePresence>
+  );
+
+  return (
+    <>
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-zinc-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo */}
+            <a href="/" className="flex items-center gap-2 flex-shrink-0">
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="flex items-center gap-2"
+              >
+                <img 
+                  src="https://raw.githubusercontent.com/sinhabinayak2207/duskerservices/main/public/duskerlogonew.jpg"
+                  alt="Dusker Logo"
+                  className="w-10 h-10 rounded"
+                />
+                <span className="text-xl font-semibold text-white whitespace-nowrap">Dusker AI</span>
+              </motion.div>
+            </a>
+
+            {/* Desktop Menu */}
+            <div className="hidden lg:flex items-center gap-8 flex-1 justify-center">
+              {/* Products Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => handleDropdown('products')}
+                  className="text-zinc-300 hover:text-white transition-colors text-sm font-medium px-3 py-2 rounded-lg hover:bg-zinc-900"
+                  aria-expanded={openDropdown === 'products'}
+                >
+                  Products
+                </button>
+                <DropdownContent items={products} isOpen={openDropdown === 'products'} />
+              </div>
+
+              {/* Solutions Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => handleDropdown('solutions')}
+                  className="text-zinc-300 hover:text-white transition-colors text-sm font-medium px-3 py-2 rounded-lg hover:bg-zinc-900"
+                  aria-expanded={openDropdown === 'solutions'}
+                >
+                  Solutions
+                </button>
+                <DropdownContent items={solutions} isOpen={openDropdown === 'solutions'} />
+              </div>
+
+              {/* Resources Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => handleDropdown('resources')}
+                  className="text-zinc-300 hover:text-white transition-colors text-sm font-medium px-3 py-2 rounded-lg hover:bg-zinc-900"
+                  aria-expanded={openDropdown === 'resources'}
+                >
+                  Resources
+                </button>
+                <DropdownContent items={resources} isOpen={openDropdown === 'resources'} />
+              </div>
+
+              <a href="/about" className="text-zinc-300 hover:text-white transition-colors text-sm font-medium px-3 py-2 rounded-lg hover:bg-zinc-900">About</a>
+              <a href="/careers" className="text-zinc-300 hover:text-white transition-colors text-sm font-medium px-3 py-2 rounded-lg hover:bg-zinc-900">Careers</a>
+              <a href="/blog" className="text-zinc-300 hover:text-white transition-colors text-sm font-medium px-3 py-2 rounded-lg hover:bg-zinc-900">Blog</a>
+            </div>
+
+            {/* Right Side Actions */}
+            <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
+              <button className="p-2 text-zinc-300 hover:text-white hover:bg-zinc-900 rounded-lg transition-colors" aria-label="Search">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </button>
+              <button className="p-2 text-zinc-300 hover:text-white hover:bg-zinc-900 rounded-lg transition-colors" aria-label="Toggle theme">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+              </button>
+              <a href="/contact" className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium transition-colors">
+                Contact
+              </a>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="lg:hidden p-2 text-zinc-300 hover:text-white"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle menu"
+            >
+              <div className="w-6 h-5 flex flex-col justify-between">
+                <span className={`h-0.5 w-full bg-current transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+                <span className={`h-0.5 w-full bg-current transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}></span>
+                <span className={`h-0.5 w-full bg-current transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {menuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="lg:hidden border-t border-zinc-800 bg-black overflow-hidden"
+            >
+              <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+                {/* Mobile Products */}
+                <div>
+                  <h3 className="text-zinc-400 text-xs font-semibold uppercase tracking-wider mb-3">Products</h3>
+                  <div className="space-y-2">
+                    {products.map((p) => (
+                      <a
+                        key={p.path}
+                        href={p.path}
+                        className="flex items-center gap-3 p-2 rounded-lg hover:bg-zinc-900 transition-colors"
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        <img src={p.icon} alt={p.name} className="w-8 h-8 rounded object-cover" />
+                        <span className="text-white text-sm font-medium">{p.name}</span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Mobile Solutions */}
+                <div>
+                  <h3 className="text-zinc-400 text-xs font-semibold uppercase tracking-wider mb-3">Solutions</h3>
+                  <div className="space-y-2">
+                    {solutions.map((s) => (
+                      <a
+                        key={s.path}
+                        href={s.path}
+                        className="flex items-center gap-3 p-2 rounded-lg hover:bg-zinc-900 transition-colors"
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        <img src={s.icon} alt={s.name} className="w-8 h-8 rounded object-cover" />
+                        <span className="text-white text-sm font-medium">{s.name}</span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Mobile Resources */}
+                <div>
+                  <h3 className="text-zinc-400 text-xs font-semibold uppercase tracking-wider mb-3">Resources</h3>
+                  <div className="space-y-2">
+                    {resources.map((r) => (
+                      <a
+                        key={r.path}
+                        href={r.path}
+                        className="flex items-center gap-3 p-2 rounded-lg hover:bg-zinc-900 transition-colors"
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        <img src={r.icon} alt={r.name} className="w-8 h-8 rounded object-cover" />
+                        <span className="text-white text-sm font-medium">{r.name}</span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Mobile Nav Links */}
+                <div className="pt-4 border-t border-zinc-800 space-y-2">
+                  <a href="/about" className="block px-2 py-2 text-white hover:bg-zinc-900 rounded-lg transition-colors" onClick={() => setMenuOpen(false)}>About</a>
+                  <a href="/careers" className="block px-2 py-2 text-white hover:bg-zinc-900 rounded-lg transition-colors" onClick={() => setMenuOpen(false)}>Careers</a>
+                  <a href="/blog" className="block px-2 py-2 text-white hover:bg-zinc-900 rounded-lg transition-colors" onClick={() => setMenuOpen(false)}>Blog</a>
+                  <a href="/contact" className="block px-2 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-center transition-colors" onClick={() => setMenuOpen(false)}>Contact</a>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </nav>
+      
+      {/* Spacer to prevent content from hiding under fixed navbar */}
+      <div className="h-16"></div>
+    </>
   );
 }
