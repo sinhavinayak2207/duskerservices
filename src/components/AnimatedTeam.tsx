@@ -7,7 +7,7 @@ const team = [
   {
     name: 'Raj Shrivastava',
     role: 'Chief Executive Officer',
-    img: '/images/raj.jpg',
+    img: '/images/u9fmyagiitewevebrppa.jpg',
     bio: 'Strategic business development professional with a talent for building partnerships and expanding market reach.'
   },
   {
