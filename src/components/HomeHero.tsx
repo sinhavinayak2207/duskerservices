@@ -49,38 +49,7 @@ export default function HomeHero() {
             Build, evaluate, and deploy world-class AI solutions with the next-generation data engine and platform.
           </motion.p>
           
-          <motion.div 
-            className={styles.trustBadges}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <p className={styles.trustedBy}>Trusted by industry leaders</p>
-            <div className={styles.badgeContainer}>
-              <Image 
-                src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1974&auto=format&fit=crop"
-                alt="Company 1"
-                width={80}
-                height={40}
-                className={styles.companyBadge}
-              />
-              <Image 
-                src="https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?q=80&w=1974&auto=format&fit=crop"
-                alt="Company 2"
-                width={80}
-                height={40}
-                className={styles.companyBadge}
-              />
-              <Image 
-                src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=1974&auto=format&fit=crop"
-                alt="Company 3"
-                width={80}
-                height={40}
-                className={styles.companyBadge}
-              />
-            </div>
-          </motion.div>
-          
+         
           <motion.div 
             className={styles.ctaRow}
             initial={{ opacity: 0, y: 20 }}
