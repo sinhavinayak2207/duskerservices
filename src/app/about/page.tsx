@@ -211,7 +211,7 @@ export default function AboutPage() {
           
           <div className={styles.teamMember}>
             <img 
-              src="https://res.cloudinary.com/doa53gfwf/image/upload/v1762804216/ma4adexev60vf2csodlv.jpg"
+              src="https://res.cloudinary.com/doa53gfwf/image/upload/v1762804835/jwckio5yeneiwko4o7ur.jpg"
               alt="Raj Shrivastava" 
               className={styles.teamAvatar} 
             />
