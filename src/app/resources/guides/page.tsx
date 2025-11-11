@@ -182,12 +182,7 @@ export default function GuidesPage() {
             >
               Contact Support
             </Link>
-            <Link
-              href="/resources"
-              className="px-8 py-4 rounded-lg bg-transparent hover:bg-white/10 text-white font-medium transition-colors border border-white/30"
-            >
-              Browse All Resources
-            </Link>
+            
           </div>
         </div>
       </section>
