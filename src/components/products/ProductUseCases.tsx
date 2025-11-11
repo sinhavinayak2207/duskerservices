@@ -67,13 +67,6 @@ export default function ProductUseCases({
                 whileHover={{ x: 5 }}
               >
                 {useCase.title}
-                {activeUseCase === useCase.id && (
-                  <motion.div 
-                    className={styles.activeIndicator}
-                    layoutId="activeIndicator"
-                    style={{ background: gradient }}
-                  />
-                )}
               </motion.button>
             ))}
           </div>
