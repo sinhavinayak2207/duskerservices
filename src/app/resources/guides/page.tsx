@@ -12,7 +12,7 @@ export default function GuidesPage() {
       title: "Getting Started with AI Training",
       description: "Learn the fundamentals of AI model training and best practices for beginners.",
       category: "Beginner",
-      readTime: "10 min read",
+      
       image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=2070&auto=format&fit=crop"
     },
     {
@@ -20,7 +20,7 @@ export default function GuidesPage() {
       title: "Advanced Data Annotation Techniques",
       description: "Explore sophisticated annotation methods to improve your training data quality.",
       category: "Advanced",
-      readTime: "15 min read",
+      
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
     },
     {
@@ -28,7 +28,7 @@ export default function GuidesPage() {
       title: "Model Evaluation Best Practices",
       description: "Learn how to properly evaluate your AI models for production readiness.",
       category: "Intermediate",
-      readTime: "12 min read",
+      
       image: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop"
     },
     {
@@ -36,7 +36,7 @@ export default function GuidesPage() {
       title: "Optimizing Training Pipelines",
       description: "Strategies for improving the efficiency and speed of your AI training pipelines.",
       category: "Advanced",
-      readTime: "18 min read",
+      
       image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2070&auto=format&fit=crop"
     },
     {
@@ -44,7 +44,7 @@ export default function GuidesPage() {
       title: "Deployment Strategies for AI Models",
       description: "A comprehensive guide to deploying AI models in production environments.",
       category: "Intermediate",
-      readTime: "14 min read",
+      
       image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop"
     },
     {
@@ -52,7 +52,7 @@ export default function GuidesPage() {
       title: "Fine-tuning Large Language Models",
       description: "Step-by-step instructions for fine-tuning LLMs for specific use cases.",
       category: "Advanced",
-      readTime: "20 min read",
+      
       image: "https://images.unsplash.com/photo-1526378800651-c32d170fe6f8?q=80&w=2069&auto=format&fit=crop"
     }
   ];
@@ -135,7 +135,7 @@ export default function GuidesPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Link href={`/resources/guides/${guide.id}`} className="block group">
+                
                   <div className="bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-700 h-full flex flex-col transition-transform group-hover:scale-[1.02]">
                     <div className="relative h-48 w-full">
                       <Image
@@ -155,13 +155,10 @@ export default function GuidesPage() {
                       <p className="text-gray-300 mb-4 flex-grow">
                         {guide.description}
                       </p>
-                      <div className="flex items-center justify-between mt-auto">
-                        <span className="text-sm text-gray-400">{guide.readTime}</span>
-                        <span className="text-blue-400 font-medium group-hover:underline">Read guide →</span>
-                      </div>
+                      
                     </div>
                   </div>
-                </Link>
+                
               </motion.div>
             ))}
           </div>
