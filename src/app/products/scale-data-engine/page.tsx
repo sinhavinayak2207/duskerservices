@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import Link from 'next/link';
 import ImageCarousel from '@/components/products/ImageCarousel';
 import ProductHero from '@/components/products/ProductHero';
 import ProductFeatures from '@/components/products/ProductFeatures';
@@ -323,7 +324,7 @@ export default function ScaleDataEnginePage() {
     description: "Get started with Scale Data Engine today and build better AI models faster with high-quality data.",
     primaryButtonText: "Start Free Trial",
     secondaryButtonText: "Talk to Sales",
-    primaryButtonLink: "/trial",
+    primaryButtonLink: "/contact",
     secondaryButtonLink: "/contact",
     backgroundImage: "/images/products/data-engine-cta-bg.jpg"
   };
@@ -386,39 +387,43 @@ export default function ScaleDataEnginePage() {
               </p>
               
               <div style={{ display: 'flex', gap: '1rem' }}>
-                <button style={{ 
-                  backgroundColor: '#6a5af9', 
-                  color: 'white',
-                  padding: '0.8rem 1.5rem',
-                  borderRadius: '50px',
-                  fontWeight: 'bold',
-                  border: 'none',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease'
-                }}>
-                  Request Demo
-                  <span>→</span>
-                </button>
+                <Link href="/contact" style={{ textDecoration: 'none' }}>
+                  <button style={{ 
+                    backgroundColor: '#6a5af9', 
+                    color: 'white',
+                    padding: '0.8rem 1.5rem',
+                    borderRadius: '50px',
+                    fontWeight: 'bold',
+                    border: 'none',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease'
+                  }}>
+                    Request Demo
+                    <span>→</span>
+                  </button>
+                </Link>
                 
-                <button style={{ 
-                  backgroundColor: 'rgba(255,255,255,0.1)', 
-                  color: 'white',
-                  padding: '0.8rem 1.5rem',
-                  borderRadius: '50px',
-                  fontWeight: 'bold',
-                  border: 'none',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease'
-                }}>
-                  Learn More
-                  <span>→</span>
-                </button>
+                <Link href="/contact" style={{ textDecoration: 'none' }}>
+                  <button style={{ 
+                    backgroundColor: 'rgba(255,255,255,0.1)', 
+                    color: 'white',
+                    padding: '0.8rem 1.5rem',
+                    borderRadius: '50px',
+                    fontWeight: 'bold',
+                    border: 'none',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease'
+                  }}>
+                    Learn More
+                    <span>→</span>
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
