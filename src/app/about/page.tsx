@@ -239,7 +239,7 @@ export default function AboutPage() {
             />
             <h3 className={styles.teamName} style={{ color: '#a8c7fa' }}>Tejaswi Sinha</h3>
             
-            <p className={styles.teamRole}>COO</p>
+            <p className={styles.teamRole}>Chief Operating Officer</p>
             <p className={styles.teamBio}>Client-focused business developer with expertise in AI solution consulting and relationship management across enterprise sectors.</p>
           </div>
           
