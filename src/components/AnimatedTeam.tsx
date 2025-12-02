@@ -16,6 +16,14 @@ const team = [
     img: '/images/ashish_kar.jpg',
     bio: 'Visionary AI entrepreneur with expertise in machine learning systems and business strategy.'
   },
+
+ {
+
+
+  name: 'Tejaswi Sinha',
+    role: 'COO',
+    img: '/images/tejaswi_sinha.jpg',
+    bio: 'Client-focused business developer with expertise in AI solution consulting and relationship management across enterprise sectors.'},
 ];
 
 export default function AnimatedTeam() {
