@@ -238,7 +238,7 @@ export default function AboutPage() {
               className={styles.teamAvatar} 
             />
             <h3 className={styles.teamName} style={{ color: '#a8c7fa' }}>Tejaswi Sinha</h3>
-            <p className={styles.teamRole}>CEO & Co-Founder</p>
+            
             <p className={styles.teamRole}>COO</p>
             <p className={styles.teamBio}>Client-focused business developer with expertise in AI solution consulting and relationship management across enterprise sectors.</p>
           </div>
