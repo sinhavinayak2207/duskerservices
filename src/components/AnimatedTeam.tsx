@@ -21,7 +21,8 @@ const team = [
 
 
   name: 'Tejaswi Sinha',
-    role: 'COO',
+    role: 'Chief Operating Officer
+',
     img: '/images/tejaswi_sinha.jpg',
     bio: 'Client-focused business developer with expertise in AI solution consulting and relationship management across enterprise sectors.'},
 ];
