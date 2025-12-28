@@ -72,6 +72,65 @@ export default function HomeHero() {
               </svg>
             </a>
           </motion.div>
+
+          <motion.div 
+            className={styles.trustBadges}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+          >
+            <p className={styles.trustedBy}>Trusted by industry leaders</p>
+            <div className={styles.badgeContainer}>
+              <motion.a 
+                href="https://snorkel.ai" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className={styles.companyBadge}
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                <Image 
+                  src="https://s46486.pcdn.co/wp-content/uploads/2023/05/snorkel_logo_header-1.svg"
+                  alt="Snorkel AI"
+                  width={100}
+                  height={32}
+                  className={styles.partnerLogo}
+                />
+              </motion.a>
+              <motion.a 
+                href="https://labelbox.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className={styles.companyBadge}
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                <Image 
+                  src="https://labelbox.com/static/images/logo-v4.svg"
+                  alt="Labelbox AI"
+                  width={100}
+                  height={32}
+                  className={styles.partnerLogo}
+                />
+              </motion.a>
+              <motion.a 
+                href="https://shaip.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className={styles.companyBadge}
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                <Image 
+                  src="https://f5b623aa.delivery.rocketcdn.me/wp-content/uploads/2020/11/Shaip-Logo-New.svg"
+                  alt="Shaip AI"
+                  width={100}
+                  height={32}
+                  className={styles.partnerLogo}
+                />
+              </motion.a>
+            </div>
+          </motion.div>
         </div>
         
         <motion.div 
