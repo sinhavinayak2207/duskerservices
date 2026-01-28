@@ -121,6 +121,20 @@
   align-items: center;
 }
 
+.badgeGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.badgeRow {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 .companyBadge {
   opacity: 0.7;
   filter: grayscale(1);
@@ -291,6 +305,14 @@
     justify-content: center;
   }
   
+  .badgeGrid {
+    align-items: center;
+  }
+  
+  .badgeRow {
+    justify-content: center;
+  }
+  
   .ctaRow {
     justify-content: center;
   }
@@ -329,6 +351,12 @@
   .badgeContainer {
     flex-wrap: wrap;
     justify-content: center;
+  }
+  
+  .badgeRow {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
   }
   
   .statsBadge {
